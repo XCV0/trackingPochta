@@ -26,8 +26,6 @@ def check_track_number(track_number):
 
     history_item = tracking_info["trackingItem"]["trackingHistoryItemList"][0]
 
-    stat_now = ""
-
     # Printing the extracted information
     print("Date:", history_item["date"])
     print("Human Status:", history_item["humanStatus"])
@@ -42,6 +40,8 @@ def check_track_number(track_number):
     print("Description:", history_item["description"])
     print("Weight:", history_item["weight"])
     print("Is In International Tracking:", history_item["isInInternationalTracking"])
+
+    return history_item
 
 
 check_track_number(track_number=track_numb)

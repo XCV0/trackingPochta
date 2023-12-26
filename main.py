@@ -2,11 +2,15 @@ import asyncio
 from handlers import client
 from aiogram import Bot, Dispatcher
 from config import tg_API
+from aiogram.fsm.storage.memory import MemoryStorage
+
+bot = ""
 
 
 async def main():
+    global bot
     bot = Bot(token=tg_API)
-    dp = Dispatcher()
+    dp = Dispatcher(storage=MemoryStorage())
 
     dp.include_router(client.router)
 
