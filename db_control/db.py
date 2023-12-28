@@ -27,7 +27,7 @@ def get_all_parcels():
 
 
 def get_last_package_date(package):
-    return cursor.execute('SELECT last_time_status FROM parcels_for_tracking WHERE track=?', (package,)).fetchone()
+    return cursor.execute('SELECT last_status_time FROM parcels_for_tracking WHERE track=?', (package,)).fetchone()
 
 
 def get_tg_id(package):
